@@ -5,7 +5,9 @@ import Register from './components/users/Register'
 import Login from './components/users/Login'
 import Account from './components/users/Account'
 import axios from 'axios'
-import AddNote from './notes/AddNote'
+
+import  CategoryList from './components/category/List'
+
 
 
 class App extends React.Component{
@@ -49,6 +51,7 @@ class App extends React.Component{
               { this.state.isAuthenticated ? (
                 <React.Fragment>
                 <li><Link to="/users/logout" className="nav-item nav-link" >Logout </Link></li>
+                <li><Link to="/category/viewall" className="nav-item nav-link" >Category </Link></li>
               </React.Fragment>
               ) : (
                 <React.Fragment>
@@ -87,13 +90,15 @@ class App extends React.Component{
                   localStorage.removeItem('token')
                 })
             }} />
+            <Route path="/category/viewall" component={CategoryList}  />
+
+
            
 
          
         </Switch>
 
       </div>   
-      <AddNote/>
       </BrowserRouter>
     
       
