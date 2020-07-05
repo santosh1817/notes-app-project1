@@ -7,6 +7,10 @@ import Account from './components/users/Account'
 import axios from 'axios'
 
 import  CategoryList from './components/category/List'
+import CategoryEdit from './components/category/Edit'
+import CategoryAdd from './components/category/Add'
+
+import CategoryRemove from './components/category/Remove'
 
 
 
@@ -47,7 +51,7 @@ class App extends React.Component{
             {/* <Link to className="navbar-brand" Link to="/">WebSiteName  */}
             </div>
             <ul className="nav navbar-nav">
-              <li className="active">< Link to="/">Home</Link></li>
+              <li >< Link to="/">Home</Link></li>
               { this.state.isAuthenticated ? (
                 <React.Fragment>
                 <li><Link to="/users/logout" className="nav-item nav-link" >Logout </Link></li>
@@ -91,7 +95,9 @@ class App extends React.Component{
                 })
             }} />
             <Route path="/category/viewall" component={CategoryList}  />
-
+            <Route path="/category/edit/:id" component={CategoryEdit}  />
+            <Route path="/category/add" component={CategoryAdd}  />
+            <Route path="/category/delete/:id" component={CategoryRemove}  />
 
            
 

@@ -1,6 +1,6 @@
 import React from 'react' 
 
-class Form extends React.Component {
+class CategoryForm extends React.Component {
     constructor(props) {
         super(props) 
         this.state = {
@@ -22,6 +22,7 @@ class Form extends React.Component {
     handleChange = (e) => {
         e.persist()
         this.setState(() => ({
+            
             [e.target.name]: e.target.value
         }))
     }
@@ -38,7 +39,7 @@ class Form extends React.Component {
                                     value={this.state.name}
                                     onChange={this.handleChange}
                                     className="form-control"
-                                    placeholder="person name"
+                                    placeholder="category name"
                                 />
                             </label>
                         </div>
@@ -51,4 +52,4 @@ class Form extends React.Component {
     }
 }
 
-export default Form
+export default CategoryForm
